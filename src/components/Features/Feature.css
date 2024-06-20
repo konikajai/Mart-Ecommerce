@@ -1,3 +1,10 @@
+.feature{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:20px;
+    width:1000px;
+    margin:auto;
+}
 .free-ship,.secure-pay{
     background-color: rgb(243, 207, 213);
 }
@@ -6,4 +13,10 @@
 }
 .back-gur{
     background-color: rgb(199, 199, 247);
+}
+.fa-car,.fa-headphones{
+    background-color: white;
+    width:40px;
+    height:40px;
+    border-radius:50%;
 }

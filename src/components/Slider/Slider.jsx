@@ -12,7 +12,7 @@ function HomeSlider() {
     };
     return (
         <>
-            <section className='homeslider text-bg-light border border-warning'>
+            <section className='homeslider text-bg-light'>
                 <div className='container-fluid'>
                     <Slider {...settings}>
                         <div className='d-flex justify-content-around align-items-center'>

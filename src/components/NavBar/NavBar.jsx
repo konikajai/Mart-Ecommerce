@@ -1,13 +1,12 @@
 import React from 'react'
 // import './Nav.css'
 // import styles from './Nav.module.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { NavLink } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const navbar={
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)',
-  height:'80px'
+  height:'80px',
+
 }
 const ul = {
   listStyle:'none'
@@ -31,8 +30,8 @@ function Nav() {
         <div className='nav d-flex align-items-center'>
         <ul className='d-flex text-center' style={ul}>
             <li style={navlink}><NavLink to='/'>Home</NavLink></li>
-            <li style={navlink}><NavLink to='/Shop'>Shop</NavLink></li>
-            <li style={navlink}><NavLink to='/Cart'>Cart</NavLink></li>
+            <li style={navlink}><NavLink to='/shop'>Shop</NavLink></li>
+            <li style={navlink}><NavLink to='/cart'>Cart</NavLink></li>
         </ul>
         <i className="fa-solid fa-user me-3 mb-2"></i>
         <i className="fa-solid fa-cart-shopping mb-2"></i>
