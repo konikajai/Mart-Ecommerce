@@ -4,7 +4,7 @@ const h3 = {
     marginTop:'130px'
 }
 const backimg = {
-    backgroundImage: `url('../../../../images/table.jpg')`,
+    backgroundImage: `url('../../../assets/table.jpg')`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'cover',

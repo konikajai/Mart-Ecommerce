@@ -14,20 +14,8 @@
     margin: auto;
 }
 
-.five-per {
-    position: relative;
-    left: 10px;
-    bottom: 53px;
-    border-radius: 15px;
-    color: white;
-    height: 20px;
-    width: 55px;
-    font-size: 10px;
-    background-color: blue;
-    border: none;
-}
 .fa-heart{
     position: relative;
-    left: 100px;
-    bottom: 53px;
+    left: 210px;
+    bottom: 50px;
 }

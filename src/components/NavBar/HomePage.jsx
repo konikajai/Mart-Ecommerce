@@ -1,20 +1,21 @@
 import React from 'react'
-import HomeSlider from '../Slider/Slider';
-import Feature from '../Features/Feature';
-import Discount from '../Discount/Discount';
-import NewArrivals from '../NewArrivals/NewArrivals';
-import BestSales from '../BestSales/BestSales';
+import Slider2 from '../Slider/Slider2';
+import Service2 from '../Services/Service2';
+import Discount2 from '../Discount/Discount2';
+import NewArrivals2 from '../NewArrivals/NewArrivals2';
+import BestSales2 from '../BestSales/BestSales2';
 import Footer from '../Footer/Footer';
+
 
 
 function HomePage() {
   return (
     <>
-      <HomeSlider />
-      <Feature />
-      <Discount />
-      <NewArrivals />
-      <BestSales />
+      <Slider2 />
+      <Service2/>
+      <Discount2 />
+      <NewArrivals2 />
+      <BestSales2 />
       <Footer />
     </>
   )

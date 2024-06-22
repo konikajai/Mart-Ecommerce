@@ -41,7 +41,7 @@ function SearchBar() {
         </div>
         <div>
             <input style={input} type="text" placeholder='Search'/>
-            <i class="fa-solid fa-magnifying-glass" style={icon}></i>
+            <i className="fa-solid fa-magnifying-glass" style={icon}></i>
         </div>
         </section>
         <BestSales/>

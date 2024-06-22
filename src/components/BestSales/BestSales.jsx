@@ -4,7 +4,7 @@ import '../BestSales/BestSales.css'
 const img = {
     width: '150px',
     height: '150px',
-    marginLeft:'50px'
+    marginLeft: '50px'
 }
 const h6h5 = {
     position: 'relative',
@@ -16,163 +16,76 @@ const rating = {
     // left: '40px'
 }
 
-function BestSales() {
+function BestSales({ sales }) {
     return (
         <>
             <section className='best-sales mt-5'>
                 <h3 className='text-center mt-5'>Best Sales</h3>
                 <div className='double-sofa-row1 d-flex justify-content-around'>
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/double-sofa-01.png" alt="double-sofa1" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
+                    {sales.slice(0, 3).map((row1) => (
+                        <div key={row1.id} className='sofa text-bg-light'>
+                            <i className="fa-regular fa-heart"></i>
+                            <img style={img} src={row1.imgUrl} alt="double-sofa1" />
+                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
+                                <h6>{row1.productName}</h6>
+                                <div style={rating}>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-around mt-3'>
+                                <h5 style={h6h5}>{row1.price}$</h5>
+                                <i className="fa-solid fa-plus"></i>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/double-sofa-02.png" alt="double-sofa2" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/double-sofa-03.png" alt="double-sofa3" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
+                    ))}
                 </div>
                 <div className='double-sofa-row2 d-flex justify-content-around mt-5'>
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/double-sofa-02.png" alt="double-sofa-4" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
+                    {sales.slice(3, 6).map((row2) => (
+                        <div key={row2.id} className='sofa text-bg-light'>
+                            <i className="fa-regular fa-heart"></i>
+                            <img style={img} src={row2.imgUrl} alt="double-sofa1" />
+                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
+                                <h6>{row2.productName}</h6>
+                                <div style={rating}>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-around mt-3'>
+                                <h5 style={h6h5}>{row2.price}$</h5>
+                                <i className="fa-solid fa-plus"></i>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/single-sofa-01.jpg" alt="single-sofa1" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/single-sofa-02.jpg" alt="single-sofa2" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-                <div className='single-sofa-row1 d-flex justify-content-around mt-5'>
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/single-sofa-03.jpg" alt="single-sofa3" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
+                <div className='double-sofa-row2 d-flex justify-content-around mt-5'>
+                    {sales.slice(6, 8).map((row3) => (
+                        <div key={row3.id} className='sofa text-bg-light'>
+                            <i className="fa-regular fa-heart"></i>
+                            <img style={img} src={row3.imgUrl} alt="double-sofa1" />
+                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
+                                <h6>{row3.productName}</h6>
+                                <div style={rating}>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                    <i className="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div className='d-flex justify-content-around mt-3'>
+                                <h5 style={h6h5}>{row3.price}$</h5>
+                                <i className="fa-solid fa-plus"></i>
                             </div>
                         </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-
-                    <div className='sofa text-bg-light'>
-                    <i class="fa-regular fa-heart"></i>
-                        <img style={img} src="../../../../images/single-sofa-04.png" alt="single-sofa4" />
-                        <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                            <h6>Stone and Beam Westview</h6>
-                            <div style={rating}>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                        <div className='d-flex justify-content-around mt-3'>
-                            <h5 style={h6h5}>$193</h5>
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
         </>
