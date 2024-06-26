@@ -1,5 +1,5 @@
 import React from 'react'
-import NewArrivals from './NewArrivals'
+import NewArr from './NewArrivals'
 
 import phone01 from "../../../src/assets/phone-01.jpg";
 import phone02 from "../../../src/assets/phone-02.jpg";
@@ -239,7 +239,7 @@ const newArrivals =[
 ]
 function NewArrivals2() {
   return (
-    <NewArrivals newArrivals={newArrivals}/>
+    <NewArr newArrivals={newArrivals}/>
   )
 }
 

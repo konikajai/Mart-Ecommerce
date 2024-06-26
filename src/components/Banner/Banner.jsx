@@ -1,26 +1,20 @@
-import React from 'react'
+import React from "react";
+import tableImage from "../../assets/table.jpg";
 
-const h3 = {
-    marginTop:'130px'
+const section = {
+  height: "300px"
 }
-const backimg = {
-    backgroundImage: `url('../../../assets/table.jpg')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    width:'100%',
-    height:'300px'
+const image ={
+    objectFit: "cover"
 }
 function Banner() {
-    return (
-        <>
-            <section style={backimg}>
-                <div className='d-flex justify-content-center'>
-                    <h3 style={h3}>Product</h3>
-                </div>
-            </section>
-        </>
-    )
+  return (
+    <>
+      <section style={section}>
+          <img style={image} src={tableImage} className="d-block w-100 h-100 img-fluid" alt="banner" />
+      </section>
+    </>
+  );
 }
 
-export default Banner
+export default Banner;

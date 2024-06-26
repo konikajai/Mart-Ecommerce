@@ -30,7 +30,7 @@ function Nav() {
         <div className='nav d-flex align-items-center'>
         <ul className='d-flex text-center' style={ul}>
             <li style={navlink}><NavLink to='/'>Home</NavLink></li>
-            <li style={navlink}><NavLink to='/shop'>Shop</NavLink></li>
+            <li style={navlink}><NavLink to='../shop'>Shop</NavLink></li>
             <li style={navlink}><NavLink to='/cart'>Cart</NavLink></li>
         </ul>
         <i className="fa-solid fa-user me-3 mb-2"></i>

@@ -1,14 +1,14 @@
 import React from 'react'
-import Discount from './Discount'
-
+import BigDiscount from './BigDiscount';
 import productImg01 from "../../../src/assets/double-sofa-01.png";
 import productImg02 from "../../../src/assets/double-sofa-02.png";
 import productImg08 from "../../../src/assets/arm-chair-02.jpg";
 import productImg09 from "../../../src/assets/arm-chair-03.jpg";
 import phone03 from "../../../src/assets/phone-03.png";
 import phone04 from "../../../src/assets/phone-04.jpg";
+// import DisplayProducts from '../DisplayProducts';
 
-export const discoutProducts = [
+export const discountProducts = [
     {
         id: "01",
         productName: "Stone and Beam Westview ",
@@ -148,7 +148,10 @@ export const discoutProducts = [
 
 function Discount2() {
     return (
-        <Discount Products={discoutProducts} />
+        <>
+        <BigDiscount Product={discountProducts}/>
+        {/* <DisplayProducts Product={discountProducts}/> */}
+        </>
     )
 }
 

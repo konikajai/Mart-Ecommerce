@@ -1,5 +1,5 @@
 import React from 'react'
-import BestSales from './BestSales'
+import BestSales from './BestSales';
 
 import productImg01 from "../../../src/assets/double-sofa-01.png";
 import productImg02 from "../../../src/assets/double-sofa-02.png";

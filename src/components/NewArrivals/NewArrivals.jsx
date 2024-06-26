@@ -1,67 +1,62 @@
 import React from 'react'
-import '../NewArrivals/NewArrivals.css'
+import { NavLink } from 'react-router-dom'
 
-const img = {
-    width: '150px',
-    height: '150px',
-    marginLeft: '50px'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/ProductAction/ProductAction';
+
+const card = {
+    width: '16rem',
+    height: '19rem',
+    border: '1px solid rgba(0, 0, 0,0.1)'
 }
-const h6h5 = {
+const heart = {
+    left: '220px',
+    bottom: '270px',
+    position: 'absolute',
+    width: '30px',
+    zIndex: '1'
+}
+const image = {
+    width: '13rem',
+    height: '9rem',
+    objectFit: 'contain',
     position: 'relative',
-    // left: '40px'
+    zIndex: '0'
 }
 const rating = {
-    color: 'orange',
-    // position: 'relative',
-    // left: '40px'
+    color: 'orange'
 }
-function NewArrivals({ newArrivals }) {
+function NewArr({ newArrivals }) {
+    const dispatch = useDispatch();
+    console.log(newArrivals)
     return (
         <>
-            <section className='new-arrivals mt-5'>
-                <h3 className='text-center mt-5'>New Arrivals</h3>
-                <div className='mobile-row d-flex justify-content-around'>
-                    {newArrivals.slice(0, 3).map((row1) => (
-                        <div key={row1.id} className='sofa text-bg-light lh-lg'>
-                            <i className="fa-regular fa-heart"></i>
-                            <img style={img} src={row1.imgUrl} alt="phone1" />
-                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                                <h6>{row1.productName}</h6>
-                                <div style={rating}>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
+            <section className='container'>
+                <h3 className='text-center mt-5 '>New Arrivals</h3>
+                <div className="row row-cols-lg-3 g-4 py-5">
+                    {newArrivals.map((data) => (
+                        <NavLink to={`/Products/${data.id}`}>
+                            <div key={data.id} style={card} className='card mb-4'>
+                                <i style={heart} className="fa-regular fa-heart"></i>
+                                <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
+                                <div className="card-body">
+                                    <h5 className="card-title h-50">{data.productName}</h5>
+                                    <div style={rating}>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+                                <div className="card-body">
+                                    <div className='row row-cols-lg-2'>
+                                        <h5>{data.price}$</h5>
+                                        <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-around mt-3'>
-                                <h5 style={h6h5}>{row1.price}$</h5>
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className='mobile-row d-flex justify-content-around mt-5'>
-                    {newArrivals.slice(3, 6).map((row2) => (
-                        <div key={row2.id} className='sofa text-bg-light lh-lg'>
-                            <i className="fa-regular fa-heart"></i>
-                            <img style={img} src={row2.imgUrl} alt="phone1" />
-                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                                <h6>{row2.productName}</h6>
-                                <div style={rating}>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                </div>
-                            </div>
-                            <div className='d-flex justify-content-around mt-3'>
-                                <h5 style={h6h5}>{row2.price}$</h5>
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
+                        </NavLink>
                     ))}
                 </div>
             </section>
@@ -69,4 +64,4 @@ function NewArrivals({ newArrivals }) {
     )
 }
 
-export default NewArrivals
+export default NewArr

@@ -1,91 +1,57 @@
 import React from 'react'
-import '../ShopCategory/ShopCategory.css'
 
-const img = {
-    width: '150px',
-    height: '150px',
-    marginLeft: '50px'
+const card = {
+    width: '16rem',
+    height: '20rem',
+    border: '1px solid rgba(0, 0, 0,0.1)'
 }
-const h6h5 = {
+const heart = {
+    left: '220px',
+    bottom: '270px',
+    position: 'absolute',
+    width: '30px',
+    zIndex: '1'
+}
+const image = {
+    width: '13rem',
+    height: '9rem',
+    objectFit: 'contain',
     position: 'relative',
-    // left: '40px'
+    zIndex: '0'
 }
 const rating = {
-    color: 'orange',
-    // position: 'relative',
-    // left: '40px'
+    color: 'orange'
 }
-
 function ShopCategory({ Shop }) {
     return (
         <>
-            <section className='best-sales mt-5'>
-                <h3 className='text-center mt-5'>Best Sales</h3>
-                <div className='double-sofa-row1 d-flex justify-content-around'>
-                    {Shop.slice(0, 3).map((row1) => (
-                        <div key={row1.id} className='sofa text-bg-light'>
-                            <i className="fa-regular fa-heart"></i>
-                            <img style={img} src={row1.imgUrl} alt="double-sofa1" />
-                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                                <h6>{row1.productName}</h6>
-                                <div style={rating}>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
+            <section>
+                <h3 className='text-center mt-5 '>Shop Category</h3>
+                <div className='container'>
+                    <div className="row row-cols-lg-3 g-4 py-5">
+                        {Shop.map((data) => (
+                            <div key={data.id} style={card} className='card mb-4'>
+                                <i style={heart} className="fa-regular fa-heart"></i>
+                                <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
+                                <div className="card-body">
+                                    <h5 className="card-title h-75">{data.productName}</h5>
+                                    <div style={rating}>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                        <i className="fa-regular fa-star"></i>
+                                    </div>
+                                </div>
+                                <div className="card-body">
+                                    <div className='row row-cols-lg-2'>
+                                        <h5>{data.price}$</h5>
+                                        <button><i className="fa-solid fa-plus"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='d-flex justify-content-around mt-3'>
-                                <h5 style={h6h5}>{row1.price}$</h5>
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className='double-sofa-row2 d-flex justify-content-around mt-5'>
-                    {Shop.slice(3, 6).map((row2) => (
-                        <div key={row2.id} className='sofa text-bg-light'>
-                            <i className="fa-regular fa-heart"></i>
-                            <img style={img} src={row2.imgUrl} alt="double-sofa1" />
-                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                                <h6>{row2.productName}</h6>
-                                <div style={rating}>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                </div>
-                            </div>
-                            <div className='d-flex justify-content-around mt-3'>
-                                <h5 style={h6h5}>{row2.price}$</h5>
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className='double-sofa-row2 d-flex justify-content-around mt-5'>
-                    {Shop.slice(6, 8).map((row3) => (
-                        <div key={row3.id} className='sofa text-bg-light'>
-                            <i className="fa-regular fa-heart"></i>
-                            <img style={img} src={row3.imgUrl} alt="double-sofa1" />
-                            <div className='d-flex flex-column justify-content-between align-items-center lh-lg'>
-                                <h6>{row3.productName}</h6>
-                                <div style={rating}>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                    <i className="fa-regular fa-star"></i>
-                                </div>
-                            </div>
-                            <div className='d-flex justify-content-around mt-3'>
-                                <h5 style={h6h5}>{row3.price}$</h5>
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
         </>

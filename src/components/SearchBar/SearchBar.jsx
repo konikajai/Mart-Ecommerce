@@ -1,7 +1,6 @@
 import React from 'react'
 import '../SearchBar/SearchBar'
-import BestSales from '../BestSales/BestSales'
-import Footer from '../Footer/Footer'
+
 const search = {
     width: '180px',
     height: '30px'
@@ -44,8 +43,6 @@ function SearchBar() {
             <i className="fa-solid fa-magnifying-glass" style={icon}></i>
         </div>
         </section>
-        <BestSales/>
-        <Footer/>
         </>
     )
 }
