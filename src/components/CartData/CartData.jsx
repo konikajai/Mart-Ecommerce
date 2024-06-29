@@ -62,7 +62,9 @@ function CartData() {
               </div>
             </div>
           ))
-        ) : (<p>No Product is added to the Cart !</p>)
+        ) : (<div style={productcss}>
+          <h6 className='ms-5 mt-3'>No Product is added to the Cart !</h6>
+          </div>)
         }
       </div>
 
