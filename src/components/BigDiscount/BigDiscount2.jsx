@@ -1,5 +1,6 @@
 import React from 'react'
 import BigDiscount from './BigDiscount';
+
 import productImg01 from "../../../src/assets/double-sofa-01.png";
 import productImg02 from "../../../src/assets/double-sofa-02.png";
 import productImg08 from "../../../src/assets/arm-chair-02.jpg";

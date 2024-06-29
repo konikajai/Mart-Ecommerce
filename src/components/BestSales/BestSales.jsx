@@ -36,11 +36,11 @@ function BestSales({ sales }) {
             <section style={section}>
                 <h3 className='text-center mt-5 '>Best Sales</h3>
                 <div className='container'>
-                    <div className="row row-cols-lg-3 g-4 py-5">
-                        {sales.map((data) => (
-                            <NavLink to={`/Products/${data.id}`}>
+                    <div className="row row-cols-md-3 g-4 py-5 ms-2">
+                        {sales.map((data) => (                         
                                 <div key={data.id} style={card} className='card mb-4'>
                                 <i style={heart} className="fa-regular fa-heart"></i>
+                                <NavLink style={{textDecoration:'none',color:'black'}} to={`/Products/${data.id}`}>
                                 <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
                                 <div className="card-body">
                                     <h5 className="card-title h-75">{data.productName}</h5>
@@ -52,14 +52,15 @@ function BestSales({ sales }) {
                                         <i className="fa-regular fa-star"></i>
                                     </div>
                                 </div>
+                                </NavLink>
                                 <div className="card-body">
-                                    <div className='row row-cols-lg-2'>
+                                    <div className='row row-cols-md-2'>
                                         <h5>{data.price}$</h5>
                                         <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
                                     </div>
                                 </div>
                             </div>
-                            </NavLink>
+                            
 
                         ))}
                     </div>

@@ -1,18 +1,10 @@
 import React from 'react'
 
-const section={
-    color: 'white',
-    backgroundColor: 'rgb(4, 4, 71)'
-}
-const ul = {
-    listStyle: 'none'
-}
-
 function Footer() {
     return (
-        <section style={section}>
-            <div className='container'>
-                <div className='row row-cols-lg-3"'>
+        <section style={{color: 'white', backgroundColor : 'rgb(4, 4, 71)'}}>
+            <div style={{padding : '35px'}} className='container'>
+                <div className='row row-cols-md-3"'>
                     <div className='col'>
                         <div className='row row-cols-6'>
                             <i className="fa-solid fa-bag-shopping"></i>
@@ -22,7 +14,7 @@ function Footer() {
                     </div>
                     <div className='col'>
                         <h5>About Us</h5>
-                        <ul style={ul}>
+                        <ul className='list-unstyled'>
                             <li>Careers</li>
                             <li>Our Stories</li>
                             <li>Our Cares</li>
@@ -32,7 +24,7 @@ function Footer() {
                     </div>
                     <div className='col'>
                         <h5>Customer Care</h5>
-                        <ul style={ul}>
+                        <ul className='list-unstyled'>
                             <li>Help Center</li>
                             <li>How to Buy</li>
                             <li>Track Your Order</li>
@@ -42,7 +34,7 @@ function Footer() {
                     </div>
                     <div className='col'>
                         <h5>Contact Us</h5>
-                        <ul style={ul}>
+                        <ul className='list-unstyled'>
                             <li>#63, 1st Floor, 16th Main, 8th Cross,BTM 1st Stage, Bangalore, India - 560029</li>
                             <li>Email : info@achieversit.com</li>
                             <li>Phone : +91 8431-040-457</li>

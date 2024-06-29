@@ -23,43 +23,43 @@ const image = {
     position: 'relative',
     zIndex: '0'
 }
-const rating = {
-    color: 'orange'
-}
+
 function NewArr({ newArrivals }) {
     const dispatch = useDispatch();
     console.log(newArrivals)
     return (
         <>
-            <section className='container'>
+            <section>
                 <h3 className='text-center mt-5 '>New Arrivals</h3>
-                <div className="row row-cols-lg-3 g-4 py-5">
-                    {newArrivals.map((data) => (
-                        <NavLink to={`/Products/${data.id}`}>
+                <div style={{marginLeft: '140px'}} className='container'>
+                    <div className="row row-cols-md-4 g-4 py-5 ms-2">
+                        {newArrivals.map((data) => (
                             <div key={data.id} style={card} className='card mb-4'>
                                 <i style={heart} className="fa-regular fa-heart"></i>
-                                <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
-                                <div className="card-body">
-                                    <h5 className="card-title h-50">{data.productName}</h5>
-                                    <div style={rating}>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
+                                <NavLink style={{textDecoration:'none',color:'black'}} to={`/Products/${data.id}`}>
+                                    <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
+                                    <div className="card-body">
+                                        <h5 className="card-title h-50">{data.productName}</h5>
+                                        <div style={{color: 'orange'}}>
+                                            <i className="fa-regular fa-star"></i>
+                                            <i className="fa-regular fa-star"></i>
+                                            <i className="fa-regular fa-star"></i>
+                                            <i className="fa-regular fa-star"></i>
+                                            <i className="fa-regular fa-star"></i>
+                                        </div>
                                     </div>
-                                </div>
+                                </NavLink>
                                 <div className="card-body">
-                                    <div className='row row-cols-lg-2'>
+                                    <div className='row row-cols-md-2'>
                                         <h5>{data.price}$</h5>
                                         <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
                                     </div>
                                 </div>
                             </div>
-                        </NavLink>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </section>
+            </section >
         </>
     )
 }

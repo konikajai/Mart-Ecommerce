@@ -6,8 +6,6 @@ import NewArrivals2 from './NewArrivals/NewArrivals2';
 import BestSales2 from './BestSales/BestSales2';
 import Footer from './Footer/Footer';
 
-
-
 function HomePage() {
   return (
     <>
