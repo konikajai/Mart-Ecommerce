@@ -591,8 +591,8 @@ const image = {
   zIndex: '0'
 }
 
-const h2 ={
-  position : 'relative',
+const h2 = {
+  position: 'relative',
   bottom: '170px',
   left: '400px'
 }
@@ -613,8 +613,8 @@ function DisplayProducts() {
 
   const productCategory = allProducts.filter((productCat) => productCat.category === product.category);
 
-//   console.log(product + "p")
-//  console.log(productCategory + "pc");
+  //   console.log(product + "p")
+  //  console.log(productCategory + "pc");
   const dispatch = useDispatch();
   return (
     <>
@@ -649,11 +649,22 @@ function DisplayProducts() {
       </div>
       <div className='m-5'>
         <div className='d-flex'>
-          <h5>Description</h5>
-          <p className='ms-4'>Reviews</p>
+          <p>Description</p>
+          <h5 className='ms-4'>Reviews (2)</h5>
         </div>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus ratione asperiores deserunt, dolore, aliquid voluptatem doloribus provident rem quos, reprehenderit voluptatibus facere veniam tempore repellendus nostrum quae corporis repellat necessitatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea commodi delectus aliquid fugit inventore, consequuntur ex esse assumenda dolor tenetur.
-        </p>
+        {product.reviews.map((review) => {
+          return (
+            <div key={review.rating} className="card border-0">
+              <div className="card-body">
+                <h6 className="card-title">John Due</h6>
+                <p className="card-subtitle mb-2 text-warning">{review.rating} (rating)</p>
+                <p className="card-text">{review.text}</p>
+              </div>
+            </div>
+          );
+        })}
+
+        <p className='mt-5'>{product.description}</p>
       </div>
 
       <h3 className='m-5'>You Might Also Like</h3>

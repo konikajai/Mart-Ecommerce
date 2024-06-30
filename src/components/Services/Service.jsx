@@ -20,10 +20,10 @@ function Services(props) {
         <>
             <div style={div} className="row row-cols-md-3 mt-5 mb-3 w-100">
                 {serviceData.map((data, index) => (
-                    <div key={index} style={{ ...card, backgroundColor: data.bg }} className="card text-center ms-3">
+                    <div key={index} style={{ ...card, backgroundColor: data.bg }} className="card text-center ms-3 border-0 rounded-0">
                         <center>
                             <div style={icon} className='mt-3'>
-                            <i className="fa-solid fa-car mt-2"></i>
+                            <i className="fa-solid fa-car mt-2"></i>                           
                             </div>
                         </center>
                         <div class="card-body mt-4">

@@ -1,4 +1,6 @@
 import React from 'react'
+// import { IonIcon } from '@ionic/react';
+
 import Services from './Service';
 
 export const serviceData = [

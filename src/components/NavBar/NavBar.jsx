@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 
+import { useSelector } from 'react-redux';
+
 const navbar = {
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)',
   height: '100px',
@@ -15,24 +17,20 @@ const navlink = {
   // color:isactive ?'green':'red',
   //   fontSize:isactive ?'16px':'14px'
 }
-// const sup={
-//   width:'10px',
-//   height:'10px',
-//   borderRadius:'50%',
-//   backgroundColor:'blue'
-// }
+const span={
+  padding:'0px 5px',
+  textAlign:'center',
+  marginRight:'5px',
+  borderRadius:'50%',
+  color:'white',
+  backgroundColor:'blue'
+}
 
 function Nav() {
-  const [count,setCount] = useState(0)
+  
+  const cartData = useSelector((state) => state.productData.cartData);
+  const cartCount = cartData.reduce((total, product) => total + product.quantity, 0);
 
-  function increaseCount(){
-    count++;
-    setCount(count)
-  }
-  function decreaseCount(){
-    count--;
-    setCount(count)
-  }
   return (
     <>
       <div className='navbar d-flex justify-content-around align-items-center' style={navbar}>
@@ -50,7 +48,7 @@ function Nav() {
             <li style={navlink}><NavLink style={{textDecoration: 'none',color: 'black',fontWeight:'bold'}} to='/cart'>Cart</NavLink></li>
           </ul>
           <i className="fa-solid fa-user ms-3 mb-2"></i>
-          <NavLink to='/cart'><i className="fa-solid fa-cart-shopping ms-4 mb-2 text-dark"></i><sup>{count}</sup></NavLink>
+          <NavLink to='/cart'><i className="fa-solid fa-cart-shopping ms-4 mb-2 text-dark"></i><sup style={span}>{cartCount}</sup></NavLink>
         </div>
       </div>
       

@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../redux/ProductAction/ProductAction'
 
 const img = {
