@@ -18,7 +18,7 @@ function Services(props) {
     const { serviceData } = props
     return (
         <>
-            <div style={div} className="row row-cols-md-3 mb-3 w-100">
+            <div style={div} className="row row-cols-md-3 mt-5 mb-3 w-100">
                 {serviceData.map((data, index) => (
                     <div key={index} style={{ ...card, backgroundColor: data.bg }} className="card text-center ms-3">
                         <center>

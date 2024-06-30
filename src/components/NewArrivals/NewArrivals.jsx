@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
@@ -25,6 +25,20 @@ const image = {
 }
 
 function NewArr({ newArrivals }) {
+
+    const [number,setNumber] = useState()
+
+    function increaseNumber(){
+        number++;
+        setNumber(number)
+    }
+
+    
+    function decreaseNumber(){
+        number--;
+        setNumber(number)
+    }
+
     const dispatch = useDispatch();
     console.log(newArrivals)
     return (

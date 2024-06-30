@@ -78,6 +78,11 @@ function ShopCategory({ Shop }) {
         );
     }); 
 
+    const h2 ={
+        position : 'relative',
+        bottom: '170px',
+        left: '400px'
+      }
     // const filteredProducts = Shop.filter((product) => (
     //     (value && input) && 
     //     (product.category.toLowerCase() === value.toLowerCase()) &&
@@ -87,6 +92,7 @@ function ShopCategory({ Shop }) {
     console.log(filteredProducts);
     return (
         <>
+            <h2 style={h2}>Product</h2>
             <section className='d-flex flex-wrap justify-content-around mt-5'>
                 <Select style={{ color: 'white', backgroundColor: 'blue' }} onChange={handleValue} options={options} placeholder="Filter By Category" />
                 {/* <div>{value}</div> */}

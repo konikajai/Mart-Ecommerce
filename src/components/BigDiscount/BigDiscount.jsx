@@ -40,7 +40,7 @@ function BigDiscount({ Product }) {
     console.log(Product)
     return (
         <>
-            <section>
+            <section style={{background: '#f2f4f7'}}>
                 <h3 className='text-center mt-5'>Big Discount</h3>
                 <div style={{marginLeft: '140px'}} className='container'>
                     <div className="row row-cols-md-4 g-4 py-5 ms-2">
@@ -51,7 +51,7 @@ function BigDiscount({ Product }) {
                                 <NavLink style={{textDecoration:'none',color:'black'}} to={`/Products/${data.id}`}>
                                     <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
                                     <div className="card-body">
-                                        <h5 className="card-title h-75">{data.productName}</h5>
+                                        <h5 className="card-title">{data.productName}</h5>
                                         <div style={{color: 'orange'}}>
                                             <i className="fa-regular fa-star"></i>
                                             <i className="fa-regular fa-star"></i>

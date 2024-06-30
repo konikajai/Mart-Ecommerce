@@ -591,12 +591,17 @@ const image = {
   zIndex: '0'
 }
 
+const h2 ={
+  position : 'relative',
+  bottom: '170px',
+  left: '400px'
+}
+
 function DisplayProducts() {
   const { id } = useParams();
   console.log("id" + id)
   console.log(discountProducts)
   console.log(newArrivals);
-
 
   // const product = discountProducts.filter(product => product.id === id);
   // const product = (newArrivals && discountProducts).find(data => data.id === id);
@@ -608,12 +613,13 @@ function DisplayProducts() {
 
   const productCategory = allProducts.filter((productCat) => productCat.category === product.category);
 
-  console.log(product + "p")
- console.log(productCategory + "pc");
+//   console.log(product + "p")
+//  console.log(productCategory + "pc");
   const dispatch = useDispatch();
   return (
     <>
       <Banner />
+      <h2 style={h2}>{product.productName}</h2>
       <div className="container">
         {product ? (
           <div className="row row-cols-2">
@@ -625,7 +631,7 @@ function DisplayProducts() {
                 <h2>{product.productName}</h2>
                 <div className='row row-cols-2 mt-4'>
                   <p className='w-25'>rating</p>
-                  <p>ratings</p>
+                  <p>{product.avgRating}</p>
                 </div>
               </div>
               <div className="row row-cols-2 mt-3">

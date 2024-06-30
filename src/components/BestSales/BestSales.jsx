@@ -1,12 +1,10 @@
 import React from 'react'
 
+import './BestSales.css'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/ProductAction/ProductAction';
 import { NavLink } from 'react-router-dom';
 
-const section = {
-    background: '#f2f4f7'
-}
 const card = {
     width: '16rem',
     height: '20rem',
@@ -33,7 +31,7 @@ function BestSales({ sales }) {
     const dispatch = useDispatch();
     return (
         <>
-            <section style={section}>
+            <section style={{background: '#f2f4f7'}}>
                 <h3 className='text-center mt-5 '>Best Sales</h3>
                 <div className='container'>
                     <div className="row row-cols-md-3 g-4 py-5 ms-2">

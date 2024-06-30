@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { removeFromCart } from '../../redux/ProductAction/ProductAction'
+import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../redux/ProductAction/ProductAction'
 
 const img = {
   width: '140px',
@@ -35,6 +35,16 @@ function CartData() {
   const cart_data = useSelector((state) => state.productData.cartData)
   console.log(cart_data);
 
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+
+    cart_data.forEach((product) => {
+      totalPrice += product.price * product.quantity;
+    });
+    return totalPrice.toFixed(2);
+  };
+
+
   return (
     <section style={{ marginTop: '70px' }} className='d-flex flex-wrap justify-content-around'>
       <div className='d-flex flex-column flex-wrap'>
@@ -47,24 +57,24 @@ function CartData() {
               <div className='d-flex flex-column justify-content-center'>
                 <h5>{product.productName}</h5>
                 <div style={{ marginTop: '30px' }} className='d-flex justify-content-between'>
-                  <p>${product.price}*2</p>
-                  <p>$1798.00</p>
+                  <p>${product.price} x {product.quantity}</p>
+                  <p>${(product.price * product.quantity).toFixed(2)}</p>
                 </div>
               </div>
               <div className='d-flex flex-column'>
                 <div className='ms-5 mt-2'>
-                  <i style={{ fontSize: '20px' }} className="fa-solid fa-xmark" onClick={() => { dispatch(removeFromCart(product.id)) }}></i>
+                  <i style={{ fontSize: '20px' }} className="fa-solid fa-xmark" onClick={() => dispatch(removeFromCart(product.id))}></i>
                 </div>
                 <span>
-                  <i style={icon} className="fa-solid fa-plus "></i>
-                  <i style={icon} className="fa-solid fa-minus ms-2"></i>
+                  <i style={icon} className="fa-solid fa-plus" onClick={() => dispatch(increaseQuantity(product.id))}></i>
+                  <i style={icon} className="fa-solid fa-minus ms-2" onClick={() => dispatch(decreaseQuantity(product.id))}></i>
                 </span>
               </div>
             </div>
           ))
         ) : (<div style={productcss}>
           <h6 className='ms-5 mt-3'>No Product is added to the Cart !</h6>
-          </div>)
+        </div>)
         }
       </div>
 
@@ -72,7 +82,7 @@ function CartData() {
         <h5 className='mt-2 ms-3'>Cart Summary</h5>
         <hr style={{ opacity: '0.1' }} />
         <p className='mt-4 ms-3'>Total Price</p>
-        <h5 className=' ms-3'>& 1798.00</h5>
+        <h5 className=' ms-3'>${calculateTotalPrice()}</h5>
       </div>
     </section>
   )
