@@ -4,40 +4,31 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/ProductAction/ProductAction';
 
-import Loader, {notify} from '../Loader/Loader';
+import {notify} from '../loader/Loader';
+import {renderStars} from '../ratings/Ratings';
+import { CiCirclePlus } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
 
 const card = {
-    width: '16rem',
     height: '19rem',
     border: '1px solid rgba(0, 0, 0,0.1)',
-    margin: '20px'
 }
 const heart = {
-    left: '220px',
-    bottom: '270px',
     position: 'absolute',
-    width: '30px',
+    right:'10px',
+    top: '10px',
     zIndex: '1'
 }
 const image = {
-    width: '13rem',
     height: '9rem',
-    objectFit: 'contain',
-    position: 'relative',
     zIndex: '0'
 }
-
-const renderStars = (avgRating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-        if (i <= avgRating) {
-            stars.push(<i key={i} className="fa-solid fa-star"></i>);
-        } else {
-            stars.push(<i key={i} className="fa-regular fa-star"></i>);
-        }
-    }
-    return stars;
-};
+const plus = {
+    fontSize: '25px',
+    cursor: 'pointer',
+    borderRadius: '50%',
+    border: 'none'
+}
 
 function NewArr({ newArrivals }) {
 
@@ -52,27 +43,37 @@ function NewArr({ newArrivals }) {
     return (
         <>
             <section>
-                <h3 className='text-center mt-5 '>New Arrivals</h3>
-                <div style={{marginLeft: '200px'}} className='container'>
-                    <div className="row row-cols-md-4 g-4 py-5 ms-2">
+                <h3 className='text-center my-5 '>New Arrivals</h3>
+                <div className='container'>
+                    <div className="row row-cols-md-3 mx-auto w-75 g-4">
                         {newArrivals.map((data) => (
-                            <div key={data.id} style={card} className='card mb-4'>
-                                <i style={heart} className="fa-regular fa-heart"></i>
+                           <div className='column'>
+                             <div key={data.id} style={card} className='card mb-4'>
+                                <FaRegHeart style={heart}/>
                                 <NavLink style={{textDecoration:'none',color:'black'}} to={`/Products/${data.id}`}>
-                                    <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
+                                    <img style={image} src={data.imgUrl} className="card-img-top object-fit-contain rounded mx-auto d-block" alt="sofa" />
                                     <div className="card-body">
-                                        <h5 className="card-title h-50">{data.productName}</h5>
+                                        <h6 className="card-title h-50">{data.productName}</h6>
                                         <div style={{ color: 'orange' }}>
                                             {renderStars(data.avgRating)}
                                         </div>
                                     </div>
                                 </NavLink>
                                 <div className="card-body">
-                                    <div className='row row-cols-md-2'>
+                                    <div className='d-flex justify-content-between'>
                                         <h5>{data.price}$</h5>
-                                        <i className="fa-solid fa-plus" onClick={() => {addToCartHandler(data)}}></i>
+                                        <CiCirclePlus onMouseOver={(e) => {
+                                            e.currentTarget.style.color = 'white';
+                                            e.currentTarget.style.backgroundColor = 'rgb(4, 4, 71)'
+                                        }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.color = 'black';
+                                                e.currentTarget.style.backgroundColor = 'white';
+                                            }}
+                                            style={plus} onClick={() => addToCartHandler(data)} />
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         ))}
                     </div>

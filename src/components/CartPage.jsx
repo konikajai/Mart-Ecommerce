@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CartData from './CartData/CartData'
-import Footer from './Footer/Footer'
+import CartData from './cartdata/CartData'
+import Footer from './footer/Footer'
 
 function CartPage() {
 

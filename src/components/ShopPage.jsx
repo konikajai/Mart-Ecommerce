@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from '../components/Banner/Banner'
-import ShopCategory from '../components/ShopCategory/ShopCategory2'
-import Footer from './Footer/Footer'
+import Banner from './banner/Banner'
+import ShopCategory from './shopcategory/ShopCategory2'
+import Footer from './footer/Footer'
 
 function ShopPage() {
   return (

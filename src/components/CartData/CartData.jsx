@@ -9,14 +9,14 @@ const img = {
 }
 const productcss = {
   marginBottom: '50px',
-  width: '600px',
+  // width: '600px',
   padding: '10px',
   height: '160px',
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)'
 }
 const summary = {
   height: '160px',
-  width: '300px',
+  // width: '300px',
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)'
 }
 const icon = {
@@ -43,13 +43,13 @@ function CartData() {
 
 
   return (
-    <section style={{ marginTop: '70px' }} className='d-flex flex-wrap justify-content-around'>
-      <div className='d-flex flex-column flex-wrap'>
+    <section style={{ marginTop: '77px' }} className='container-fluid d-flex flex-wrap mb-2 justify-content-around'>
+      <div className='col-md-6 col-sm-8 d-flex flex-column flex-wrap'>
         {cart_data && cart_data.length ? (
           cart_data.map((product) => (
             <div style={productcss} className='d-flex flex-wrap justify-content-around'>
               <div>
-                <img style={img} src={product.imgUrl} alt={product.category} />
+                <img className="img-fluid" style={img} src={product.imgUrl} alt={product.category} />
               </div>
               <div className='d-flex flex-column justify-content-center'>
                 <h5>{product.productName}</h5>
@@ -75,7 +75,7 @@ function CartData() {
         }
       </div>
 
-      <div style={summary} className='lh-lg'>
+      <div style={summary} className='col-md-3 col-sm-4 lh-lg'>
         <h5 className='mt-2 ms-3'>Cart Summary</h5>
         <hr style={{ opacity: '0.1' }} />
         <p className='mt-4 ms-3'>Total Price</p>

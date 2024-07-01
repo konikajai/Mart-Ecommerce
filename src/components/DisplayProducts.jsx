@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { addToCart} from '../redux/ProductAction/ProductAction';
+import { addToCart } from '../redux/ProductAction/ProductAction';
 
-import Banner from './Banner/Banner';
-import Footer from './Footer/Footer';
+import Banner from './banner/Banner';
+import Footer from './footer/Footer';
 
 import productImg01 from "../assets/double-sofa-01.png";
 import productImg02 from "../assets/double-sofa-02.png";
@@ -572,31 +572,20 @@ const newArrivals = [
 ]
 
 const card = {
-  width: '16rem',
   height: '19rem',
   border: '1px solid rgba(0, 0, 0,0.1)',
-  margin: '20px'
 }
 const heart = {
-  left: '220px',
-  bottom: '270px',
   position: 'absolute',
+  right:'10px',
+  top: '10px',
   width: '30px',
   zIndex: '1'
 }
 const image = {
-  width: '13rem',
   height: '9rem',
-  objectFit: 'contain',
-  position: 'relative',
   zIndex: '0'
 }
-const h2 = {
-  position: 'relative',
-  bottom: '170px',
-  // left: '400px'
-}
-
 function DisplayProducts() {
   const { id } = useParams();
   console.log("id" + id)
@@ -635,7 +624,7 @@ function DisplayProducts() {
   return (
     <>
       <Banner />
-      <h2 style={h2}>{product.productName}</h2>
+      <h2 style={{ top: '260px' }} className='position-absolute start-50 translate-middle fs-2 my-2 text-center'>{product.productName}</h2>
       <div className="container">
         {product ? (
           <div className="row row-cols-2">
@@ -687,27 +676,29 @@ function DisplayProducts() {
 
       <h3 className='m-5'>You Might Also Like</h3>
       <section>
-        <div style={{ marginLeft: '210px' }} className='container'>
-          <div className="row row-cols-md-4 g-4 py-5 ms-2">
+        <div className='container'>
+          <div className="row row-cols-md-3 mx-auto w-75 g-4">
             {productCategory.map((data) => (
-              <div key={data.id} style={card} className='card mb-4'>
-                <i style={heart} className="fa-regular fa-heart"></i>
-                <NavLink style={{ textDecoration: 'none', color: 'black' }} to={`/Products/${data.id}`}>
-                  <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
+              <div>
+                <div key={data.id} style={card} className='card mb-4'>
+                  <i style={heart} className="fa-regular fa-heart"></i>
+                  <NavLink style={{ textDecoration: 'none', color: 'black' }} to={`/Products/${data.id}`}>
+                    <img style={image} src={data.imgUrl} className="card-img-top object-fit-contain rounded mx-auto d-block" alt="sofa" />
+                    <div className="card-body">
+                      <h5 className="card-title h-50">{data.productName}</h5>
+                      <div style={{ color: 'orange' }}>
+                        {renderStars(data.avgRating)}
+                      </div>
+                    </div>
+                  </NavLink>
                   <div className="card-body">
-                    <h5 className="card-title h-50">{data.productName}</h5>
-                    <div style={{ color: 'orange' }}>
-                      {renderStars(data.avgRating)}
+                    <div className='row row-cols-md-2'>
+                      <h5>{data.price}$</h5>
+                      <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
                     </div>
                   </div>
-                </NavLink>
-                <div className="card-body">
-                  <div className='row row-cols-md-2'>
-                    <h5>{data.price}$</h5>
-                    <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
-                  </div>
                 </div>
-              </div>
+              </div >
             ))}
           </div>
         </div>

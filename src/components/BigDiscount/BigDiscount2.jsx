@@ -7,7 +7,6 @@ import productImg08 from "../../../src/assets/arm-chair-02.jpg";
 import productImg09 from "../../../src/assets/arm-chair-03.jpg";
 import phone03 from "../../../src/assets/phone-03.png";
 import phone04 from "../../../src/assets/phone-04.jpg";
-// import DisplayProducts from '../DisplayProducts';
 
 export const discountProducts = [
     {
@@ -151,7 +150,6 @@ function Discount2() {
     return (
         <>
         <BigDiscount Product={discountProducts}/>
-        {/* <DisplayProducts Product={discountProducts}/> */}
         </>
     )
 }
