@@ -1,4 +1,5 @@
 import React from 'react'
+import { IonIcon } from '@ionic/react'
 
 const div={
     paddingLeft:'140px'
@@ -23,7 +24,7 @@ function Services(props) {
                     <div key={index} style={{ ...card, backgroundColor: data.bg }} className="card text-center ms-3 border-0 rounded-0">
                         <center>
                             <div style={icon} className='mt-3'>
-                            <i className="fa-solid fa-car mt-2"></i>                           
+                            <IonIcon icon={data.icon} className='mt-1' style={{ fontSize: '24px', color: '#000' }}/>
                             </div>
                         </center>
                         <div class="card-body mt-4">
@@ -32,7 +33,6 @@ function Services(props) {
                         </div>
                     </div>
                 ))}
-
             </div>
         </>
     )

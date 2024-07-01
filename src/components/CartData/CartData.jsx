@@ -7,7 +7,6 @@ const img = {
   width: '140px',
   height: '140px'
 }
-
 const productcss = {
   marginBottom: '50px',
   width: '600px',
@@ -15,7 +14,6 @@ const productcss = {
   height: '160px',
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)'
 }
-
 const summary = {
   height: '160px',
   width: '300px',
@@ -77,7 +75,7 @@ function CartData() {
         }
       </div>
 
-      <div style={summary} className='lh-lg mb-5'>
+      <div style={summary} className='lh-lg'>
         <h5 className='mt-2 ms-3'>Cart Summary</h5>
         <hr style={{ opacity: '0.1' }} />
         <p className='mt-4 ms-3'>Total Price</p>

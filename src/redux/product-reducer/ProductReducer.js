@@ -7,7 +7,7 @@ const initialState = {
 
 export function productReducer(state = initialState, action) {
     let updatedCartData;
-    
+
     switch (action.type) {
         case ACTION_TYPE.ADD_TO_CART:
             const productExists = state.cartData.find(item => item.id === action.payload.id);
@@ -32,16 +32,15 @@ export function productReducer(state = initialState, action) {
             );
             localStorage.setItem('cartData', JSON.stringify(updatedCartData));
             return { ...state, cartData: updatedCartData };
-
+            
         case ACTION_TYPE.DECREASE_QUANTITY:
-            updatedCartData = state.cartData.map(item =>
-                item.id === action.payload
-                    ? { ...item, quantity: Math.max(1, item.quantity - 1) }
-                    : item
-            );
+            updatedCartData = state.cartData
+                .map(item =>
+                    item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item
+                )
+                .filter(item => item.quantity > 0);
             localStorage.setItem('cartData', JSON.stringify(updatedCartData));
             return { ...state, cartData: updatedCartData };
-
         default:
             return state;
     }

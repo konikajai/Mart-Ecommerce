@@ -17,13 +17,16 @@ const navlink = {
   // color:isactive ?'green':'red',
   //   fontSize:isactive ?'16px':'14px'
 }
+
 const span={
   padding:'0px 5px',
-  textAlign:'center',
-  marginRight:'5px',
   borderRadius:'50%',
   color:'white',
-  backgroundColor:'blue'
+  fontSize:'12px',
+  backgroundColor:'blue',
+  position:'relative',
+  bottom:'10px',
+  right:'3px'
 }
 
 function Nav() {
@@ -48,7 +51,7 @@ function Nav() {
             <li style={navlink}><NavLink style={{textDecoration: 'none',color: 'black',fontWeight:'bold'}} to='/cart'>Cart</NavLink></li>
           </ul>
           <i className="fa-solid fa-user ms-3 mb-2"></i>
-          <NavLink to='/cart'><i className="fa-solid fa-cart-shopping ms-4 mb-2 text-dark"></i><sup style={span}>{cartCount}</sup></NavLink>
+          <NavLink to='/cart'><i className="fa-solid fa-cart-shopping ms-4 mb-2 text-dark"></i><span style={span}>{cartCount}</span></NavLink>
         </div>
       </div>
       

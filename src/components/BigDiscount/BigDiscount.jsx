@@ -1,14 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/ProductAction/ProductAction';
+import Loader, {notify} from '../Loader/Loader';
 
 const card = {
     width: '16rem',
     height: '20rem',
-    border: '1px solid rgba(0, 0, 0,0.1)'
-}
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    margin: '20px'
+};
 const button = {
     width: '60px',
     height: '20px',
@@ -19,52 +20,68 @@ const button = {
     bottom: '270px',
     position: 'absolute',
     zIndex: '1'
-}
+};
 const heart = {
     left: '220px',
     bottom: '270px',
     position: 'absolute',
     width: '30px',
     zIndex: '1'
-}
+};
 const image = {
     width: '13rem',
     height: '9rem',
     objectFit: 'contain',
     position: 'relative',
     zIndex: '0'
-}
+};
+
+const renderStars = (avgRating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+        if (i <= avgRating) {
+            stars.push(<i key={i} className="fa-solid fa-star"></i>);
+        } else {
+            stars.push(<i key={i} className="fa-regular fa-star"></i>);
+        }
+    }
+    return stars;
+};
 
 function BigDiscount({ Product }) {
     const dispatch = useDispatch();
-    console.log(Product)
+    console.log(Product);
+
+    const addToCartHandler = (data) => {
+        dispatch(addToCart(data));
+        notify();
+    };
+
     return (
         <>
-            <section style={{background: '#f2f4f7'}}>
-                <h3 className='text-center mt-5'>Big Discount</h3>
-                <div style={{marginLeft: '140px'}} className='container'>
+            <Loader /> {/* Ensure the Loader component is rendered */}
+
+            <section style={{ background: '#f2f4f7' }}>
+                <h3 className="text-center mt-5">Big Discount</h3>
+                <div style={{ marginLeft: '200px' }} className="container">
                     <div className="row row-cols-md-4 g-4 py-5 ms-2">
                         {Product.map((data) => (
-                            <div key={data.id} style={card} className='card mb-4'>
-                                <button style={button} className='btn btn-primary text-center'>{data.discount}%Off</button>
+                            <div key={data.id} style={card} className="card mb-4">
+                                <button style={button} className="btn btn-primary text-center">
+                                    {data.discount}%Off
+                                </button>
                                 <i style={heart} className="fa-regular fa-heart"></i>
-                                <NavLink style={{textDecoration:'none',color:'black'}} to={`/Products/${data.id}`}>
+                                <NavLink style={{ textDecoration: 'none', color: 'black' }} to={`/Products/${data.id}`}>
                                     <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
                                     <div className="card-body">
                                         <h5 className="card-title">{data.productName}</h5>
-                                        <div style={{color: 'orange'}}>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                        </div>
+                                        <div style={{ color: 'orange' }}>{renderStars(data.avgRating)}</div>
                                     </div>
                                 </NavLink>
                                 <div className="card-body">
-                                    <div className='row row-cols-md-2'>
+                                    <div className="row row-cols-md-2">
                                         <h5>{data.price}$</h5>
-                                        <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
+                                        <i className="fa-solid fa-plus" onClick={() => addToCartHandler(data)}></i>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +90,7 @@ function BigDiscount({ Product }) {
                 </div>
             </section>
         </>
-    )
+    );
 }
 
-export default BigDiscount
+export default BigDiscount;

@@ -5,6 +5,8 @@ import Select from 'react-select'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/ProductAction/ProductAction'
 
+import Loader, {notify} from '../Loader/Loader';
+
 const inputdata = {
     width: '500px',
     height: '35px',
@@ -21,7 +23,8 @@ const icon = {
 const card = {
     width: '16rem',
     height: '20rem',
-    border: '1px solid rgba(0, 0, 0,0.1)'
+    border: '1px solid rgba(0, 0, 0,0.1)',
+    margin:'20px'
 }
 const heart = {
     left: '220px',
@@ -37,9 +40,24 @@ const image = {
     position: 'relative',
     zIndex: '0'
 }
-const rating = {
-    color: 'orange'
+const h2 = {
+    position: 'relative',
+    bottom: '170px',
+    // left: '400px'
 }
+
+const renderStars = (avgRating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+        if (i <= avgRating) {
+            stars.push(<i key={i} className="fa-solid fa-star"></i>);
+        } else {
+            stars.push(<i key={i} className="fa-regular fa-star"></i>);
+        }
+    }
+    return stars;
+};
+
 function ShopCategory({ Shop }) {
 
     // console.log(Shop);
@@ -72,17 +90,11 @@ function ShopCategory({ Shop }) {
 
 
     const filteredProducts = Shop.filter((product) => {
-        return (      
+        return (
             (value ? product.category.toLowerCase() === value.toLowerCase() : true) &&
             (input ? product.productName.toLowerCase().includes(input.toLowerCase()) : true)
         );
-    }); 
-
-    const h2 ={
-        position : 'relative',
-        bottom: '170px',
-        left: '400px'
-      }
+    });
     // const filteredProducts = Shop.filter((product) => (
     //     (value && input) && 
     //     (product.category.toLowerCase() === value.toLowerCase()) &&
@@ -96,33 +108,29 @@ function ShopCategory({ Shop }) {
             <section className='d-flex flex-wrap justify-content-around mt-5'>
                 <Select style={{ color: 'white', backgroundColor: 'blue' }} onChange={handleValue} options={options} placeholder="Filter By Category" />
                 {/* <div>{value}</div> */}
-                
+
                 {/* <select name="" id="">
                     {options.map(option =>
                         <option value={option.value}>{option.label}</option>)}
                 </select> */}
-               <div>
+                <div>
                     <input onChange={handleInput} style={inputdata} type="text" placeholder='Search' />
                     <i style={icon} className="fa-solid fa-magnifying-glass"></i>
                     {/* <span>{input}</span> */}
                 </div>
             </section>
-            <section> 
+            <section>
                 <h3 className='text-center mt-5 '>Shop Category</h3>
-                <div className='container'>
+                <div style={{marginLeft: '230px'}}  className='container'>
                     <div className="row row-cols-lg-3 g-4 py-5">
-                        {filteredProducts.length===0?(<div>NO PRODUCT</div>):(filteredProducts.map((data,index) => (
+                        {filteredProducts.length === 0 ? (<div>NO PRODUCT</div>) : (filteredProducts.map((data, index) => (
                             <div key={index} style={card} className='card mb-4'>
                                 <i style={heart} className="fa-regular fa-heart"></i>
                                 <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
                                 <div className="card-body">
                                     <h5 className="card-title h-75">{data.productName}</h5>
-                                    <div style={rating}>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
-                                        <i className="fa-regular fa-star"></i>
+                                    <div style={{ color: 'orange' }}>
+                                        {renderStars(data.avgRating)}
                                     </div>
                                 </div>
                                 <div className="card-body">

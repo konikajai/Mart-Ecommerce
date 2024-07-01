@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/ProductAction/ProductAction';
+import { addToCart} from '../redux/ProductAction/ProductAction';
 
 import Banner from './Banner/Banner';
 import Footer from './Footer/Footer';
@@ -574,7 +574,8 @@ const newArrivals = [
 const card = {
   width: '16rem',
   height: '19rem',
-  border: '1px solid rgba(0, 0, 0,0.1)'
+  border: '1px solid rgba(0, 0, 0,0.1)',
+  margin: '20px'
 }
 const heart = {
   left: '220px',
@@ -590,11 +591,10 @@ const image = {
   position: 'relative',
   zIndex: '0'
 }
-
 const h2 = {
   position: 'relative',
   bottom: '170px',
-  left: '400px'
+  // left: '400px'
 }
 
 function DisplayProducts() {
@@ -616,6 +616,22 @@ function DisplayProducts() {
   //   console.log(product + "p")
   //  console.log(productCategory + "pc");
   const dispatch = useDispatch();
+
+  // const cart_data = useSelector((state) => state.productData.cartData)
+  // console.log(cart_data);
+
+  const renderStars = (avgRating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= avgRating) {
+        stars.push(<i key={i} className="fa-solid fa-star"></i>);
+      } else {
+        stars.push(<i key={i} className="fa-regular fa-star"></i>);
+      }
+    }
+    return stars;
+  };
+
   return (
     <>
       <Banner />
@@ -629,18 +645,20 @@ function DisplayProducts() {
             <div className="col mt-5">
               <div className='mt-3'>
                 <h2>{product.productName}</h2>
-                <div className='row row-cols-2 mt-4'>
-                  <p className='w-25'>rating</p>
-                  <p>{product.avgRating}</p>
+                <div className='row row-cols-4 mt-4'>
+                  <p style={{ color: 'orange' }}>
+                    {renderStars(product.avgRating)}
+                  </p>
+                  <p >{product.avgRating}ratings</p>
                 </div>
               </div>
               <div className="row row-cols-2 mt-3">
                 <h4 className='w-25'>${product.price}</h4>
-                <p>category {product.category}</p>
+                <p>category:{product.category}</p>
               </div>
               <p className='mt-2'>{product.shortDesc}</p>
               <div>
-                <p>quantity</p>
+                <p>{product.quantity}</p>
                 <button type="button" className="btn btn-primary" onClick={() => { dispatch(addToCart(product)) }}>Add to Cart</button>
               </div>
             </div>
@@ -669,7 +687,7 @@ function DisplayProducts() {
 
       <h3 className='m-5'>You Might Also Like</h3>
       <section>
-        <div style={{ marginLeft: '140px' }} className='container'>
+        <div style={{ marginLeft: '210px' }} className='container'>
           <div className="row row-cols-md-4 g-4 py-5 ms-2">
             {productCategory.map((data) => (
               <div key={data.id} style={card} className='card mb-4'>
@@ -679,11 +697,7 @@ function DisplayProducts() {
                   <div className="card-body">
                     <h5 className="card-title h-50">{data.productName}</h5>
                     <div style={{ color: 'orange' }}>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
-                      <i className="fa-regular fa-star"></i>
+                      {renderStars(data.avgRating)}
                     </div>
                   </div>
                 </NavLink>

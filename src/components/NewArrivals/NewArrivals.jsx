@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/ProductAction/ProductAction';
 
+import Loader, {notify} from '../Loader/Loader';
+
 const card = {
     width: '16rem',
     height: '19rem',
-    border: '1px solid rgba(0, 0, 0,0.1)'
+    border: '1px solid rgba(0, 0, 0,0.1)',
+    margin: '20px'
 }
 const heart = {
     left: '220px',
@@ -24,28 +27,33 @@ const image = {
     zIndex: '0'
 }
 
+const renderStars = (avgRating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+        if (i <= avgRating) {
+            stars.push(<i key={i} className="fa-solid fa-star"></i>);
+        } else {
+            stars.push(<i key={i} className="fa-regular fa-star"></i>);
+        }
+    }
+    return stars;
+};
+
 function NewArr({ newArrivals }) {
-
-    const [number,setNumber] = useState()
-
-    function increaseNumber(){
-        number++;
-        setNumber(number)
-    }
-
-    
-    function decreaseNumber(){
-        number--;
-        setNumber(number)
-    }
 
     const dispatch = useDispatch();
     console.log(newArrivals)
+
+    const addToCartHandler = (data) => {
+        dispatch(addToCart(data));
+        notify();
+    };
+
     return (
         <>
             <section>
                 <h3 className='text-center mt-5 '>New Arrivals</h3>
-                <div style={{marginLeft: '140px'}} className='container'>
+                <div style={{marginLeft: '200px'}} className='container'>
                     <div className="row row-cols-md-4 g-4 py-5 ms-2">
                         {newArrivals.map((data) => (
                             <div key={data.id} style={card} className='card mb-4'>
@@ -54,19 +62,15 @@ function NewArr({ newArrivals }) {
                                     <img style={image} src={data.imgUrl} className="card-img-top" alt="sofa" />
                                     <div className="card-body">
                                         <h5 className="card-title h-50">{data.productName}</h5>
-                                        <div style={{color: 'orange'}}>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
+                                        <div style={{ color: 'orange' }}>
+                                            {renderStars(data.avgRating)}
                                         </div>
                                     </div>
                                 </NavLink>
                                 <div className="card-body">
                                     <div className='row row-cols-md-2'>
                                         <h5>{data.price}$</h5>
-                                        <i className="fa-solid fa-plus" onClick={() => { dispatch(addToCart(data)) }}></i>
+                                        <i className="fa-solid fa-plus" onClick={() => {addToCartHandler(data)}}></i>
                                     </div>
                                 </div>
                             </div>
