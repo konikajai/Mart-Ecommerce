@@ -1,10 +1,10 @@
 import React from 'react';
 import HomeSlider from './Slider';
 
-import wireless01 from '../../assets/wireless-01.png';
-import sofaSlide from "../../assets/hero-img.png";
-import watchSlide from "../../assets/watch-07.png";
-import phone08 from "../../assets/phone-08.png";
+import wireless01 from '../assets/wireless-01.png';
+import sofaSlide from "../assets/hero-img.png";
+import watchSlide from "../assets/watch-07.png";
+import phone08 from "../assets/phone-08.png";
 
 export const SliderData = [
     {

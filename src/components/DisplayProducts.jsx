@@ -6,8 +6,8 @@ import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/ProductAction/ProductAction';
 
-import Banner from './banner/Banner';
-import Footer from './footer/Footer';
+import Banner from './Banner';
+import Footer from '../components/Footer';
 
 import productImg01 from "../assets/double-sofa-01.png";
 import productImg02 from "../assets/double-sofa-02.png";

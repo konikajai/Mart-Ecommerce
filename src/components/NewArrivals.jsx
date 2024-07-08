@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../redux/ProductAction/ProductAction';
+import { addToCart } from '../redux/ProductAction/ProductAction';
 
-import {notify} from '../loader/Loader';
-import {renderStars} from '../ratings/Ratings';
+import {notify} from './Loader';
+import {renderStars} from './Ratings';
 import { CiCirclePlus } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 
@@ -30,7 +30,7 @@ const plus = {
     border: 'none'
 }
 
-function NewArr({ newArrivals }) {
+function NewArrivals({ newArrivals }) {
 
     const dispatch = useDispatch();
     console.log(newArrivals)
@@ -83,4 +83,4 @@ function NewArr({ newArrivals }) {
     )
 }
 
-export default NewArr
+export default NewArrivals;

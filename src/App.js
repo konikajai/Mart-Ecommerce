@@ -1,14 +1,14 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NavBar from './components/navbar/NavBar';
+import NavBar from './components/NavBar';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import HomePage from '../src/components/HomePage'
 import ShopPage from '../src/components/ShopPage'
 import CartPage from '../src/components/CartPage'
 import NoPage from '../src/components/NoPage'
 import DisplayProducts from './components/DisplayProducts';
-import Loader from './components/loader/Loader';
-import Ratings from './components/ratings/Ratings';
+import Loader from './components/Loader';
+import Ratings from './components/Ratings';
 
 
 function App() {

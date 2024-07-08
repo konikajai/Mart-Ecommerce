@@ -3,20 +3,14 @@ import React from 'react'
 import { useState } from 'react'
 import Select from 'react-select'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../redux/ProductAction/ProductAction'
+import { addToCart } from '../redux/ProductAction/ProductAction'
 
 import { CiCirclePlus } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 
-import { notify } from '../loader/Loader';
-import { renderStars } from '../ratings/Ratings';
+import { notify } from './Loader';
+import { renderStars } from './Ratings';
 
-const inputdata = {
-    width: '500px',
-    height: '35px',
-    borderRadius: '15px',
-    border: '1px solid grey'
-}
 const card = {
     height: '19rem',
     border: '1px solid rgba(0, 0, 0,0.1)',

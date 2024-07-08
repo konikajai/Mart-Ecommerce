@@ -1,17 +1,17 @@
 import React from 'react'
-import NewArr from './NewArrivals'
+import NewArrivals from './NewArrivals';
 
-import phone01 from "../../../src/assets/phone-01.jpg";
-import phone02 from "../../../src/assets/phone-02.jpg";
-import phone04 from "../../../src/assets/phone-04.jpg";
-import phone05 from "../../../src/assets/phone-05.jpg";
-import phone03 from "../../../src/assets/phone-03.png";
-import phone06 from "../../../src/assets/phone-06.jpg";
+import phone01 from "../../src/assets/phone-01.jpg";
+import phone02 from "../../src/assets/phone-02.jpg";
+import phone04 from "../../src/assets/phone-04.jpg";
+import phone05 from "../../src/assets/phone-05.jpg";
+import phone03 from "../../src/assets/phone-03.png";
+import phone06 from "../../src/assets/phone-06.jpg";
 
-import wireless01 from "../../../src/assets/wireless-01.png";
-import wireless02 from "../../../src/assets/wireless-02.png";
-import wireless03 from "../../../src/assets/wireless-03.png";
-import wireless04 from "../../../src/assets/wireless-04.png";
+import wireless01 from "../../src/assets/wireless-01.png";
+import wireless02 from "../../src/assets/wireless-02.png";
+import wireless03 from "../../src/assets/wireless-03.png";
+import wireless04 from "../../src/assets/wireless-04.png";
 
 const newArrivals =[
     {
@@ -239,8 +239,8 @@ const newArrivals =[
 ]
 function NewArrivals2() {
   return (
-    <NewArr newArrivals={newArrivals}/>
+    <NewArrivals newArrivals={newArrivals}/>
   )
 }
 
-export default NewArrivals2
+export default NewArrivals2;

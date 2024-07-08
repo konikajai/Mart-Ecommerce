@@ -1,17 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import logo from '../../assets/logo.png';
+import logo from '../assets/logo.png';
 
 const navbar = {
   boxShadow: '10px 10px 5px 0px rgba(0, 0, 0, 0.75)',
   height: '100px',
-};
-
-const navlink = {
-  cursor: 'pointer',
-  fontSize: '17px',
-  margin: '0 15px',
 };
 
 const span = {
@@ -41,13 +35,13 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} to='/'>Home</NavLink>
+              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' , cursor: 'pointer'}} to='/'>Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} to='../shop'>Shop</NavLink>
+              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold', cursor: 'pointer'}} to='../shop'>Shop</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} to='/cart'>Cart</NavLink>
+              <NavLink className="nav-link" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold', cursor: 'pointer'}} to='/cart'>Cart</NavLink>
             </li>
             <li className="nav-item d-flex align-items-center">
               <i className="fa-solid fa-user ms-3 mb-2"></i>

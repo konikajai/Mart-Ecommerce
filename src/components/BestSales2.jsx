@@ -1,14 +1,14 @@
 import React from 'react'
 import BestSales from './BestSales';
 
-import productImg01 from "../../../src/assets/double-sofa-01.png";
-import productImg02 from "../../../src/assets/double-sofa-02.png";
-import productImg03 from "../../../src/assets/double-sofa-03.png";
+import productImg01 from "../../src/assets/double-sofa-01.png";
+import productImg02 from "../../src/assets/double-sofa-02.png";
+import productImg03 from "../../src/assets/double-sofa-03.png";
 
-import productImg04 from "../../../src/assets/single-sofa-01.jpg";
-import productImg05 from "../../../src/assets/single-sofa-02.jpg";
-import productImg06 from "../../../src/assets/single-sofa-03.jpg";
-import productImg007 from "../../../src/assets/single-sofa-04.png";
+import productImg04 from "../../src/assets/single-sofa-01.jpg";
+import productImg05 from "../../src/assets/single-sofa-02.jpg";
+import productImg06 from "../../src/assets/single-sofa-03.jpg";
+import productImg007 from "../../src/assets/single-sofa-04.png";
 
 const sales =[
     {

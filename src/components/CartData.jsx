@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../redux/ProductAction/ProductAction'
+import { removeFromCart, increaseQuantity, decreaseQuantity } from '../redux/ProductAction/ProductAction'
 
 const img = {
   width: '140px',

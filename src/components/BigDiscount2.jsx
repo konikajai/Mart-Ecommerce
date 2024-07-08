@@ -1,12 +1,12 @@
 import React from 'react'
 import BigDiscount from './BigDiscount';
 
-import productImg01 from "../../../src/assets/double-sofa-01.png";
-import productImg02 from "../../../src/assets/double-sofa-02.png";
-import productImg08 from "../../../src/assets/arm-chair-02.jpg";
-import productImg09 from "../../../src/assets/arm-chair-03.jpg";
-import phone03 from "../../../src/assets/phone-03.png";
-import phone04 from "../../../src/assets/phone-04.jpg";
+import productImg01 from "../../src/assets/double-sofa-01.png";
+import productImg02 from "../../src/assets/double-sofa-02.png";
+import productImg08 from "../../src/assets/arm-chair-02.jpg";
+import productImg09 from "../../src/assets/arm-chair-03.jpg";
+import phone03 from "../../src/assets/phone-03.png";
+import phone04 from "../../src/assets/phone-04.jpg";
 
 export const discountProducts = [
     {

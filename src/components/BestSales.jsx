@@ -1,11 +1,11 @@
 import React from 'react'
 
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../redux/ProductAction/ProductAction';
+import { addToCart } from '../redux/ProductAction/ProductAction';
 import { NavLink } from 'react-router-dom';
 
-import { notify } from '../loader/Loader';
-import { renderStars } from '../ratings/Ratings';
+import { notify } from './Loader';
+import { renderStars } from './Ratings';
 import { CiCirclePlus } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 

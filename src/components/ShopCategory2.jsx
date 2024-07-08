@@ -1,40 +1,40 @@
 import React from 'react'
 import ShopCategory from './ShopCategory';
 
-import productImg01 from "../../../src/assets/double-sofa-01.png";
-import productImg02 from "../../../src/assets/double-sofa-02.png";
-import productImg03 from "../../../src/assets/double-sofa-03.png";
+import productImg01 from "../../src/assets/double-sofa-01.png";
+import productImg02 from "../../src/assets/double-sofa-02.png";
+import productImg03 from "../../src/assets/double-sofa-03.png";
 
-import productImg04 from "../../../src/assets/single-sofa-01.jpg";
-import productImg05 from "../../../src/assets/single-sofa-02.jpg";
-import productImg06 from "../../../src/assets/single-sofa-03.jpg";
-import productImg007 from "../../../src/assets/single-sofa-04.png";
+import productImg04 from "../../src/assets/single-sofa-01.jpg";
+import productImg05 from "../../src/assets/single-sofa-02.jpg";
+import productImg06 from "../../src/assets/single-sofa-03.jpg";
+import productImg007 from "../../src/assets/single-sofa-04.png";
 
-import productImg07 from "../../../src/assets/arm-chair-01.jpg";
-import productImg08 from "../../../src/assets/arm-chair-02.jpg";
-import productImg09 from "../../../src/assets/arm-chair-03.jpg";
-import productImg10 from "../../../src/assets/arm-chair-01.jpg";
+import productImg07 from "../../src/assets/arm-chair-01.jpg";
+import productImg08 from "../../src/assets/arm-chair-02.jpg";
+import productImg09 from "../../src/assets/arm-chair-03.jpg";
+import productImg10 from "../../src/assets/arm-chair-01.jpg";
 
-import phone01 from "../../../src/assets/phone-01.jpg";
-import phone02 from "../../../src/assets/phone-02.jpg";
-import phone03 from "../../../src/assets/phone-03.png";
-import phone04 from "../../../src/assets/phone-04.jpg";
-import phone05 from "../../../src/assets/phone-05.jpg";
-import phone06 from "../../../src/assets/phone-06.jpg";
-import phone08 from "../../../src/assets/phone-08.png";
+import phone01 from "../../src/assets/phone-01.jpg";
+import phone02 from "../../src/assets/phone-02.jpg";
+import phone03 from "../../src/assets/phone-03.png";
+import phone04 from "../../src/assets/phone-04.jpg";
+import phone05 from "../../src/assets/phone-05.jpg";
+import phone06 from "../../src/assets/phone-06.jpg";
+import phone08 from "../../src/assets/phone-08.png";
 
-import watch01 from "../../../src/assets/watch-01.jpg";
-import watch02 from "../../../src/assets/watch-02.jpg";
-import watch03 from "../../../src/assets/watch-03.jpg";
-import watch04 from "../../../src/assets/watch-04.jpg";
+import watch01 from "../../src/assets/watch-01.jpg";
+import watch02 from "../../src/assets/watch-02.jpg";
+import watch03 from "../../src/assets/watch-03.jpg";
+import watch04 from "../../src/assets/watch-04.jpg";
 
-import wireless01 from "../../../src/assets/wireless-01.png";
-import wireless02 from "../../../src/assets/wireless-02.png";
-import wireless03 from "../../../src/assets/wireless-03.png";
-import wireless04 from "../../../src/assets/wireless-04.png";
+import wireless01 from "../../src/assets/wireless-01.png";
+import wireless02 from "../../src/assets/wireless-02.png";
+import wireless03 from "../../src/assets/wireless-03.png";
+import wireless04 from "../../src/assets/wireless-04.png";
 
-import sofaSlide from "../../../src/assets/hero-img.png";
-import watchSlide from "../../../src/assets/watch-07.png";
+import sofaSlide from "../../src/assets/hero-img.png";
+import watchSlide from "../../src/assets/watch-07.png";
 
 export const products = [
   {

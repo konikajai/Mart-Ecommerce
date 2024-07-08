@@ -1,5 +1,5 @@
 import React from "react";
-import tableImage from "../../assets/table.jpg";
+import tableImage from "../assets/table.jpg";
 
 function Banner() {
   return (
