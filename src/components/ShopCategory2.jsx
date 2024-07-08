@@ -21,7 +21,6 @@ import phone03 from "../../src/assets/phone-03.png";
 import phone04 from "../../src/assets/phone-04.jpg";
 import phone05 from "../../src/assets/phone-05.jpg";
 import phone06 from "../../src/assets/phone-06.jpg";
-import phone08 from "../../src/assets/phone-08.png";
 
 import watch01 from "../../src/assets/watch-01.jpg";
 import watch02 from "../../src/assets/watch-02.jpg";
@@ -32,9 +31,6 @@ import wireless01 from "../../src/assets/wireless-01.png";
 import wireless02 from "../../src/assets/wireless-02.png";
 import wireless03 from "../../src/assets/wireless-03.png";
 import wireless04 from "../../src/assets/wireless-04.png";
-
-import sofaSlide from "../../src/assets/hero-img.png";
-import watchSlide from "../../src/assets/watch-07.png";
 
 export const products = [
   {

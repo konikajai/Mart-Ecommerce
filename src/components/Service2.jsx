@@ -1,5 +1,4 @@
 import React from 'react'
-import { IonIcon } from '@ionic/react';
 import { car, card, shieldHalfOutline, headset } from 'ionicons/icons';
 
 import Services from './Service';
